@@ -1,0 +1,7 @@
+[user]
+	name = <your alias>
+	email = <your email>
+	password = <your password>
+
+[includeIf "gitdir:C:/Work/github-projects/"]
+    path=C:/Work/github-projects/.gitconfig-github

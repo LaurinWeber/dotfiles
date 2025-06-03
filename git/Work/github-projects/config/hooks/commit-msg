@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Conventional Commit regex
+regex="^(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .+$"
+
+# Read the commit message
+commit_msg=$(cat "$1")
+
+# Validate the commit message
+if ! [[ $commit_msg =~ $regex ]]; then
+  echo "Error: Commit message does not follow Conventional Commits format."
+  echo "Example: feat(login): add support for social login"
+  exit 1
+fi
