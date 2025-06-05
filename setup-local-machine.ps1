@@ -13,8 +13,9 @@ $apps = @(
     "Bruno.Bruno",
     "JGraph.Draw",
     "Google.Chrome",
-    "Mozilla.Firefox"
-)
+    "Mozilla.Firefox",
+    "Bitdefender.Bitdefender"
+    )
 
 foreach ($app in $apps) {
     Write-Host "`nInstalling: $app"
@@ -36,4 +37,4 @@ Write-Host "`nAdobe Creative Cloud must be installed manually:"
 Write-Host "Download it here: https://creativecloud.adobe.com/apps/download/creative-cloud"
 
 # Final message
-Write-Host "`n✅ Setup complete. A system restart is recomme
+Write-Host "`n✅ Setup complete. A system restart is recommended"
