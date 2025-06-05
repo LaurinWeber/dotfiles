@@ -14,7 +14,8 @@ $apps = @(
     "JGraph.Draw",
     "Google.Chrome",
     "Mozilla.Firefox",
-    "Bitdefender.Bitdefender"
+    "Bitdefender.Bitdefender",
+    "Bitwarden.Bitwarden"
     )
 
 foreach ($app in $apps) {
