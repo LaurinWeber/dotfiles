@@ -15,7 +15,8 @@ $apps = @(
     "Google.Chrome",
     "Mozilla.Firefox",
     "Bitdefender.Bitdefender",
-    "Bitwarden.Bitwarden"
+    "Bitwarden.Bitwarden",
+    "cURL.cURL"
     )
 
 foreach ($app in $apps) {
