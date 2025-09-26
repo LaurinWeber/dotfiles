@@ -3,25 +3,25 @@
 ## Code Qualität
 
 - [ ] Kommentiert welche Technische Schulden müssen jetzt oder später behandelt werden?
-- [ ] Die [Releasenotes](https://wikit.post.ch/x/okY_Gw) sind aktuell
+- [ ] Die Releasenotes sind aktuell
 - [ ] Codecoverage wurde in Sonar manuell überprüft
 - [ ] E2E Tests wurden erstellt / Folgeticket für Edgecases erstellt
 
 ## Deployment auf Dev / Test
 
-- [ ] Umgebungsvariablen sind hinzugefügt und in [Releasenotes](https://wikit.post.ch/x/okY_Gw) ergänzt
-- [ ] Änderungen an Drittsystemen wurden in [Releasenotes](https://wikit.post.ch/x/okY_Gw) dokumentiert (PF Checkout Konfiguration)
+- [ ] Umgebungsvariablen sind hinzugefügt und in Releasenotes ergänzt
+- [ ] Änderungen an Drittsystemen wurden in Releasenotes dokumentiert (PF Checkout Konfiguration)
 - [ ] Branch wurde erfolgreich auf Umgebung deployed
-- [ ] Manuelle Tests für Deployment wurden definiert und anschliessend in [Releasenotes](https://wikit.post.ch/x/okY_Gw) dokumentiert
+- [ ] Manuelle Tests für Deployment wurden definiert und anschliessend in Releasenotes dokumentiert
 - [ ] E2E Tests wurden auf Umgebung durchgeführt
 - [ ] Manuelle Tests wurden auf Umgebung durchgeführt
-- [ ] Logs wurden in [Splunk](https://splunk.pnet.ch/de-DE/app/UI-PostIT-billingonline/search) auf Auffälligkeiten geprüft
+- [ ] Logs wurden in [Splunk] auf Auffälligkeiten geprüft
 - [ ] Das Layer 4 Diagram ist aktuell
 
 ## Monitoring
 
-- [ ] [Splunk](https://splunk.pnet.ch/de-DE/app/UI-PostIT-billingonline/search) Monitoring wurde angepasst / erweitert
-- [ ] Allfällige Anpassungen im [Splunk](https://splunk.pnet.ch/de-DE/app/UI-PostIT-billingonline/search) an Berichten, Dashboards oder Benachrichtigungen wurden durchgeführt
+- [ ] Splunk Monitoring wurde angepasst / erweitert
+- [ ] Allfällige Anpassungen im Splunk an Berichten, Dashboards oder Benachrichtigungen wurden durchgeführt
 - [ ] Ops wurde über Änderungen informiert (Teams)
 
 ## Dokumentation / Architektur
@@ -33,7 +33,7 @@
 ## Sonstiges
 
 - [ ] Open API Spec / UI wurden aktualisiert
-- [ ] Vorgehen für [DEMO](https://wikit.post.ch/display/InnovationCorner/Demo) ist definiert und Ticket hinterlegt
+- [ ] Vorgehen für DEMO ist definiert und Ticket hinterlegt
 - [ ] Bruno Collections und Dokumentation anpassen / ergänzen
 
 ## Ready?
