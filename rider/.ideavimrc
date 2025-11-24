@@ -1,0 +1,134 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" show all actions :actionlist
+" shortcut for all actions shift shift
+" Close window SHIFT ESC
+
+
+let mapleader=","
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Format selected code
+vmap Q <Action>(ReformatCode)
+
+set visualbell
+set noerrorbells
+set incsearch
+set hlsearch
+set ignorecase
+set backspace=indent,eol,start
+set clipboard=unnamed
+set number
+set relativenumber
+
+inoremap jj <Esc>
+
+" up/down half page
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-m> <C-u>zz
+"clear search highliting
+nnoremap <leader>c :nohl<CR>
+"Copy to windows clipboard"
+noremap <Leader>y "+y
+"paste from windows clipboard without deleting the clipboard
+noremap <leader>p "_dp
+vnoremap <Leader>p "_dP
+
+" keep search results in the center of the screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+" H/L is more natural than 0/$
+map H ^
+map L $
+" reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+nmap / <Action>(Find)
+
+nmap <leader>x <Action>(ReformatCode)
+nmap <leader>ns <Action>(NewScratchFile)
+nmap <leader>nf <Action>(NewElementSamePlace)
+nmap <leader>ss <Action>(SelectInProjectView)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>g <Action>(Git.Menu)
+
+
+
+nmap <c-j> <Action>(Back)
+nmap <c-k> <Action>(Forward)
+nmap <c-l> <Action>(NextTab)
+nmap <c-h> <Action>(PreviousTab)
+nmap <c-t> <Action>(SearchEverywhere)
+vmap <c-e> <Action>(RiderSurroundWith)
+
+nmap <c-w> <Action>(CloseEditor)
+nmap ff <Action>(SearchEverywhere)
+
+"Windows
+nmap tt <Action>(HideActiveWindow)
+nmap th <Action>(HideAllWindows)
+nmap ts <Action>(HideSideWindows)
+nmap tm <Action>(ActivateFindToolWindow)
+nmap tn <Action>(ActivateNuGetToolWindow)
+nmap t, <Action>(ActivateBuildToolWindow)
+nmap t. <Action>(ActivateUnitTestsToolWindow)
+nmap tj <Action>(ActivateTerminalToolWindow)
+nmap tx <Action>(CloseAllEditorsButActive)
+
+"Bookmarks
+nmap tk <Action>(ActivateProblemsViewToolWindow)
+nmap fv <Action>(ActivateBookmarksToolWindow)
+nmap fg <Action>(Bookmarks)
+nmap fa <Action>(ToggleBookmark)
+nmap fj <Action>(GotoPreviousBookmark)
+nmap fk <Action>(GotoNextBookmark)
+
+nmap gd <Action>(GotoDeclaration)
+nmap gl <Action>(QuickJavaDoc)
+nmap gL <Action>(QuickImplementations)
+nmap go <Action>(ParameterInfo)
+nmap gy <Action>(ShowErrorDescription)
+nmap gc <Action>(CommentByLineComment)
+nmap gr <Action>(FindUsages)
+nmap gi <Action>(GotoImplementation)
+nmap gj <Action>(MethodDown)
+nmap <c-i> <Action>(MethodDown)
+nmap gk <Action>(MethodUp)
+nmap <c-o> <Action>(MethodUp)
+nmap gt <Action>(RiderUnitTestDebugContextAction)
+nmap gT <Action>(RiderUnitTestRunContextAction)
+nmap gu <Action>(XDebugger.AttachToProcess)
+nmap gw <Action>(CollapseRegion)
+nmap ge <Action>(ExpandAllRegions)
+nmap gf <Action>(Refactorings.QuickListPopupAction)
+vmap gf <Action>(Refactorings.QuickListPopupAction)
+nmap gb <Action>(ShowErrorDescription)
+nmap gE <Action>(GotoNextError)
+nmap gp <Action>(ParameterInfo)
+nmap gF <Action>(FileStructurePopup)
+nmap gD <Action>(GotoSuperMethod)
+
+nmap <c-g> <Action>(GotoLine)
+
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+Plug 'preservim/nerdtree'
+set NERDTree
+map <c-n> :NERDTree<CR>
