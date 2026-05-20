@@ -5,7 +5,6 @@
 $apps = @(
     "Microsoft.VisualStudioCode",
     "Git.Git",
-    "Docker.DockerDesktop",
     "PuTTY.PuTTY",
     "OpenJS.NodeJS",
     "Microsoft.DotNet.SDK.8",
@@ -17,7 +16,9 @@ $apps = @(
     "Bitdefender.Bitdefender",
     "Bitwarden.Bitwarden",
     "cURL.cURL",
-    "RedHat.Podman"
+    "RedHat.Podman",
+    "ShiningLight.OpenSSL.Dev",
+    "wez.wezterm"
     )
 
 foreach ($app in $apps) {
