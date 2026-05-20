@@ -51,18 +51,34 @@ local function full_path(cwd)
   return (cwd:gsub("\\", "/"))
 end
 
+-- Per-directory git branch cache: avoids spawning git on every update-status tick.
+-- Each unique cwd gets its own entry so multiple panes on different projects
+-- always show their own correct branch. Max staleness = GIT_CACHE_TTL seconds.
+wezterm.GLOBAL.git_cache = wezterm.GLOBAL.git_cache or {}
+local GIT_CACHE_TTL = 5
+
 local function git_branch(cwd)
   if cwd == "" then return nil end
+
+  local now     = os.time()
+  local cached  = wezterm.GLOBAL.git_cache[cwd]
+
+  if cached and (now - cached.ts) < GIT_CACHE_TTL then
+    return cached.branch  -- may be nil for non-git dirs, that's fine
+  end
 
   local ok, stdout = wezterm.run_child_process({
     "git", "-C", cwd, "rev-parse", "--abbrev-ref", "HEAD"
   })
 
-  if not ok then return nil end
+  local branch = nil
+  if ok then
+    branch = (stdout or ""):gsub("[\r\n%s]+$", "")
+    if branch == "" then branch = nil end
+  end
 
-  local branch = (stdout or ""):gsub("[\r\n%s]+$", "")
-  if branch == "" then return nil end
-
+  -- Cache the result (including nil) so non-git dirs don't keep retrying
+  wezterm.GLOBAL.git_cache[cwd] = { branch = branch, ts = now }
   return branch
 end
 
